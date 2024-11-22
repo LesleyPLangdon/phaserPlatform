@@ -31,6 +31,8 @@ let player;
 let platforms;
 let planet1;
 
+
+
 function create() {
    // Set world bounds
     this.physics.world.setBounds(0, 0, 4000, 2000);  // The second parameter is the world height
@@ -80,8 +82,9 @@ function create() {
     // Set up collisions between player and platforms
     this.physics.add.collider(player, platforms);
 
-    planet1 = this.physics.add.sprite(100, 0, 'planet1');  // Create player sprite
-    
+    planet1 = this.physics.add.sprite(300, 0, 'planet1');  // Create player sprite
+    planet1.setDisplaySize(100, 100);
+    planet1.refreshBody();
     planet1.setCollideWorldBounds(true);  // Keep player within game world bounds
 
     // Set up collisions between player and platforms
