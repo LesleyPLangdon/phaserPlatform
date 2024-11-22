@@ -21,9 +21,9 @@ var game = new Phaser.Game(config);
 
 function preload() {
     // This is where we'll load our game assets
-   this.load.image('ground', 'assets/grass.png');
+    this.load.image('ground', 'assets/grass.png');
     this.load.image('player', 'assets/alienGreen_walk1.png');
-  this.load.image('box', 'assets/boxCoin_disabled.png');
+    this.load.image('box', 'assets/boxCoin_disabled.png');
 }
 
 let player;
@@ -43,19 +43,19 @@ function create() {
     platforms.create(425, 600, 'ground');
     platforms.create(550, 600, 'ground');
     platforms.create(675, 600, 'ground');
-    platforms.create(675, 400, 'box');
+    platforms.create(625, 400, 'box');
     platforms.create(800, 600, 'ground');
     platforms.create(925, 600, 'ground');
     platforms.create(1050, 600, 'ground');
-    platforms.create(1175, 600, 'ground');
-    platforms.create(1300, 600, 'ground');
+    platforms.create(1175, 400, 'ground');
+    platforms.create(1300, 400, 'ground');
     platforms.create(1425, 600, 'ground');
     platforms.create(1550, 600, 'ground');
     platforms.create(1675, 600, 'ground');
     platforms.create(1800, 600, 'ground');
-    platforms.create(1925, 600, 'ground');
-    platforms.create(2050, 600, 'ground');
-    platforms.create(2175, 600, 'ground');
+    platforms.create(1925, 800, 'ground');
+    platforms.create(2050, 800, 'ground');
+    platforms.create(2175, 800, 'ground');
     platforms.create(2300, 600, 'ground');
     platforms.create(2425, 600, 'ground');
     platforms.create(2550, 600, 'ground');
