@@ -24,10 +24,12 @@ function preload() {
     this.load.image('ground', 'assets/grass.png');
     this.load.image('player', 'assets/alienGreen_walk1.png');
     this.load.image('box', 'assets/boxCoin_disabled.png');
+    this.load.image('planet1', 'assets/planet01.png')
 }
 
 let player;
 let platforms;
+let planet1;
 
 function create() {
    // Set world bounds
@@ -74,6 +76,13 @@ function create() {
     player = this.physics.add.sprite(50, 100, 'player');  // Create player sprite
     player.setBounce(0.2);  // Set player bounce
     player.setCollideWorldBounds(true);  // Keep player within game world bounds
+
+    // Set up collisions between player and platforms
+    this.physics.add.collider(player, platforms);
+
+    planet1 = this.physics.add.sprite(100, 0, 'planet1');  // Create player sprite
+    
+    planet1.setCollideWorldBounds(true);  // Keep player within game world bounds
 
     // Set up collisions between player and platforms
     this.physics.add.collider(player, platforms);
