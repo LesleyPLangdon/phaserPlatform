@@ -24,12 +24,12 @@ function preload() {
     this.load.image('ground', 'assets/grass.png');
     this.load.image('player', 'assets/alienGreen_walk1.png');
     this.load.image('box', 'assets/boxCoin_disabled.png');
-    this.load.image('planet1', 'assets/planet01.png')
+    // this.load.image('planet1', 'assets/planet01.png')
 }
 
 let player;
 let platforms;
-let planet1;
+// let planet1;
 
 
 
@@ -44,22 +44,22 @@ function create() {
     platforms.create(50, 600, 'ground');
     platforms.create(175, 600, 'ground');
     platforms.create(300, 600, 'ground');
-    platforms.create(425, 600, 'ground');
-    platforms.create(550, 600, 'ground');
-    platforms.create(675, 600, 'ground');
+    platforms.create(425, 800, 'ground');
+    platforms.create(550, 800, 'ground');
+    platforms.create(675, 800, 'ground');
     platforms.create(625, 400, 'box');
-    platforms.create(800, 600, 'ground');
-    platforms.create(925, 600, 'ground');
+    platforms.create(800, 800, 'ground');
+    platforms.create(925, 800, 'ground');
     platforms.create(1050, 600, 'ground');
-    platforms.create(1175, 400, 'ground');
-    platforms.create(1300, 400, 'ground');
+    platforms.create(1175, 600, 'ground');
+    platforms.create(1300, 600, 'ground');
     platforms.create(1425, 600, 'ground');
     platforms.create(1550, 600, 'ground');
     platforms.create(1675, 600, 'ground');
     platforms.create(1800, 600, 'ground');
-    platforms.create(1925, 800, 'ground');
-    platforms.create(2050, 800, 'ground');
-    platforms.create(2175, 800, 'ground');
+    platforms.create(1925, 600, 'ground');
+    platforms.create(2050, 600, 'ground');
+    platforms.create(2175, 600, 'ground');
     platforms.create(2300, 600, 'ground');
     platforms.create(2425, 600, 'ground');
     platforms.create(2550, 600, 'ground');
@@ -82,13 +82,13 @@ function create() {
     // Set up collisions between player and platforms
     this.physics.add.collider(player, platforms);
 
-    planet1 = this.physics.add.sprite(300, 0, 'planet1');  // Create player sprite
-    planet1.setDisplaySize(100, 100);
-    planet1.refreshBody();
-    planet1.setCollideWorldBounds(true);  // Keep player within game world bounds
+    // planet1 = this.physics.add.sprite(300, 0, 'planet1');  // Create player sprite
+    // planet1.setDisplaySize(100, 100);
+    // planet1.refreshBody();
+    // planet1.setCollideWorldBounds(true);  // Keep player within game world bounds
 
     // Set up collisions between player and platforms
-    this.physics.add.collider(player, platforms);
+    // this.physics.add.collider(player, platforms);
 
      // Make camera follow player and stay within world bounds
     this.cameras.main.startFollow(player, true, 0.05, 0.05);
