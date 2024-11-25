@@ -26,7 +26,7 @@ function preload() {
     this.load.image('box', 'assets/boxCoin_disabled.png');
     this.load.image('planet1', 'assets/planet01.png');
     this.load.image('planet9', 'assets/planet09.png');
-    this.load.image('planet4', 'assets/129674594.png');
+    this.load.image('planet4', 'assets/1295674594.png');
 }
 
 let player;
@@ -48,11 +48,11 @@ function create() {
     platforms = this.physics.add.staticGroup();  // Create a group for platforms
     
     // Add ground platforms
-    platforms.create(75, 600, 'planet1').setDisplaySize(150, 150).refreshBody().body.setOffset(10, 20);
+    platforms.create(75, 600, 'planet1').setDisplaySize(150, 150).refreshBody().body.setCircle(60).setOffset(15, 20);
     // platforms.create(175, 600, 'ground');
-    platforms.create(350, 500, 'planet9').setDisplaySize(200, 200).refreshBody().body.setOffset(10, 20);
+    platforms.create(350, 500, 'planet9').setDisplaySize(200, 200).refreshBody().body.setCircle(80).setOffset(20, 25);
     // platforms.create(425, 800, 'ground');
-    platforms.create(550, 800, 'planet4').setDisplaySize(200, 200).refreshBody().body.setOffset(10, 20);
+    platforms.create(600, 400, 'planet4').setDisplaySize(100, 100).refreshBody().body.setCircle(50).setOffset(0, 5);
     // platforms.create(675, 800, 'ground');
     // platforms.create(625, 400, 'box');
     // platforms.create(800, 800, 'ground');
@@ -82,7 +82,8 @@ function create() {
     // platforms.create(3800, 600, 'ground');
     // platforms.create(3925, 600, 'ground');
 
-    player = this.physics.add.sprite(50, 100, 'player');  // Create player sprite
+    player = this.physics.add.sprite(50, 50, 'player');  // Create player sprite
+    player.setSize(120, 150).setOffset(0, 100);
     player.setBounce(0.2);  // Set player bounce
     player.setCollideWorldBounds(true);  // Keep player within game world bounds
 
