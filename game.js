@@ -26,13 +26,14 @@ function preload() {
     this.load.image('box', 'assets/boxCoin_disabled.png');
     this.load.image('planet1', 'assets/planet01.png');
     this.load.image('planet9', 'assets/planet09.png');
-    this.load.image('planet4', 'assets/planet04.png');
+    this.load.image('planet4', 'assets/129674594.png');
 }
 
 let player;
 let platforms;
 let planet1;
 let planet9;
+let planet4;
 
 // planet1.setDisplaySize(100, 100);
 // planet1.refreshBody();
@@ -51,7 +52,7 @@ function create() {
     // platforms.create(175, 600, 'ground');
     platforms.create(350, 500, 'planet9').setDisplaySize(200, 200).refreshBody().body.setOffset(10, 20);
     // platforms.create(425, 800, 'ground');
-    // platforms.create(550, 800, 'ground');
+    platforms.create(550, 800, 'planet4').setDisplaySize(200, 200).refreshBody().body.setOffset(10, 20);
     // platforms.create(675, 800, 'ground');
     // platforms.create(625, 400, 'box');
     // platforms.create(800, 800, 'ground');
