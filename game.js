@@ -7,7 +7,7 @@ var config = {
         default: 'arcade',  // We'll be using Phaser's Arcade physics plugin
         arcade: {
             gravity: { y: 300 },  // This is the gravity value to be used in the game
-            debug: false  // This lets you visualize the physics bodies if set to true
+            debug: true  // This lets you visualize the physics bodies if set to true
         }
     },
     scene: {
@@ -24,12 +24,18 @@ function preload() {
     this.load.image('ground', 'assets/grass.png');
     this.load.image('player', 'assets/alienGreen_walk1.png');
     this.load.image('box', 'assets/boxCoin_disabled.png');
-    // this.load.image('planet1', 'assets/planet01.png')
+    this.load.image('planet1', 'assets/planet01.png');
+    this.load.image('planet9', 'assets/planet09.png');
+    this.load.image('planet4', 'assets/planet04.png');
 }
 
 let player;
 let platforms;
-// let planet1;
+let planet1;
+let planet9;
+
+// planet1.setDisplaySize(100, 100);
+// planet1.refreshBody();
 
 
 
@@ -39,41 +45,41 @@ function create() {
   
 
     platforms = this.physics.add.staticGroup();  // Create a group for platforms
-
+    
     // Add ground platforms
-    platforms.create(50, 600, 'ground');
-    platforms.create(175, 600, 'ground');
-    platforms.create(300, 600, 'ground');
-    platforms.create(425, 800, 'ground');
-    platforms.create(550, 800, 'ground');
-    platforms.create(675, 800, 'ground');
-    platforms.create(625, 400, 'box');
-    platforms.create(800, 800, 'ground');
-    platforms.create(925, 800, 'ground');
-    platforms.create(1050, 600, 'ground');
-    platforms.create(1175, 600, 'ground');
-    platforms.create(1300, 600, 'ground');
-    platforms.create(1425, 600, 'ground');
-    platforms.create(1550, 600, 'ground');
-    platforms.create(1675, 600, 'ground');
-    platforms.create(1800, 600, 'ground');
-    platforms.create(1925, 600, 'ground');
-    platforms.create(2050, 600, 'ground');
-    platforms.create(2175, 600, 'ground');
-    platforms.create(2300, 600, 'ground');
-    platforms.create(2425, 600, 'ground');
-    platforms.create(2550, 600, 'ground');
-    platforms.create(2675, 600, 'ground');
-    platforms.create(2800, 600, 'ground');
-    platforms.create(2925, 600, 'ground');
-    platforms.create(3050, 600, 'ground');
-    platforms.create(3175, 600, 'ground');
-    platforms.create(3300, 600, 'ground');
-    platforms.create(3425, 600, 'ground');
-    platforms.create(3550, 600, 'ground');
-    platforms.create(3675, 600, 'ground');
-    platforms.create(3800, 600, 'ground');
-    platforms.create(3925, 600, 'ground');
+    platforms.create(75, 600, 'planet1').setDisplaySize(150, 150).refreshBody().body.setOffset(10, 20);
+    // platforms.create(175, 600, 'ground');
+    platforms.create(350, 500, 'planet9').setDisplaySize(200, 200).refreshBody().body.setOffset(10, 20);
+    // platforms.create(425, 800, 'ground');
+    // platforms.create(550, 800, 'ground');
+    // platforms.create(675, 800, 'ground');
+    // platforms.create(625, 400, 'box');
+    // platforms.create(800, 800, 'ground');
+    // platforms.create(925, 800, 'ground');
+    // platforms.create(1050, 600, 'ground');
+    // platforms.create(1175, 600, 'ground');
+    // platforms.create(1300, 600, 'ground');
+    // platforms.create(1425, 600, 'ground');
+    // platforms.create(1550, 600, 'ground');
+    // platforms.create(1675, 600, 'ground');
+    // platforms.create(1800, 600, 'ground');
+    // platforms.create(1925, 600, 'ground');
+    // platforms.create(2050, 600, 'ground');
+    // platforms.create(2175, 600, 'ground');
+    // platforms.create(2300, 600, 'ground');
+    // platforms.create(2425, 600, 'ground');
+    // platforms.create(2550, 600, 'ground');
+    // platforms.create(2675, 600, 'ground');
+    // platforms.create(2800, 600, 'ground');
+    // platforms.create(2925, 600, 'ground');
+    // platforms.create(3050, 600, 'ground');
+    // platforms.create(3175, 600, 'ground');
+    // platforms.create(3300, 600, 'ground');
+    // platforms.create(3425, 600, 'ground');
+    // platforms.create(3550, 600, 'ground');
+    // platforms.create(3675, 600, 'ground');
+    // platforms.create(3800, 600, 'ground');
+    // platforms.create(3925, 600, 'ground');
 
     player = this.physics.add.sprite(50, 100, 'player');  // Create player sprite
     player.setBounce(0.2);  // Set player bounce
