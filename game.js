@@ -21,6 +21,7 @@ var game = new Phaser.Game(config);
 
 function preload() {
     // This is where we'll load our game assets
+    this.load.image('background', 'spaceBackground.png');
     this.load.image('ground', 'assets/grass.png');
     this.load.image('player', 'assets/alienGreen_walk1.png');
     this.load.image('box', 'assets/boxCoin_disabled.png');
@@ -29,6 +30,7 @@ function preload() {
     this.load.image('planet4', 'assets/1295674594.png');
 }
 
+let background;
 let player;
 let platforms;
 let planet1;
@@ -43,7 +45,8 @@ let planet4;
 function create() {
    // Set world bounds
     this.physics.world.setBounds(0, 0, 4000, 2000);  // The second parameter is the world height
-  
+    background = this.add.image(0, 0, 'background');
+    background.setScale(4, 2);
 
     platforms = this.physics.add.staticGroup();  // Create a group for platforms
     
