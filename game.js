@@ -28,6 +28,10 @@ function preload() {
     this.load.image('planet1', 'assets/planet01.png');
     this.load.image('planet9', 'assets/planet09.png');
     this.load.image('planet4', 'assets/1295674594.png');
+    this.load.spritesheet('myGif', '2851306443.png', {
+        frameWidth: 400, // Replace with your frame's width
+        frameHeight: 400 // Replace with your frame's height
+    });
 }
 
 let background;
@@ -104,6 +108,18 @@ function create() {
      // Make camera follow player and stay within world bounds
     this.cameras.main.startFollow(player, true, 0.05, 0.05);
     this.cameras.main.setBounds(0, 0, 4000, 2000);  // The second parameter is the world height
+
+    this.anims.create({
+        key: 'gifAnimation',
+        frames: this.anims.generateFrameNumbers('myGif', { start: 0, end: 9 }), // Adjust as needed
+        frameRate: 10,
+        repeat: -1
+    });
+
+    let gifSprite = this.add.sprite(900, 500, 'myGif');
+    gifSprite.play('gifAnimation');
+    // gifSprite.setScale(2); // Optional: Scale up
+    gifSprite.setOrigin(0.5, 0.5); // Optional: Center origin
 }
 
 
